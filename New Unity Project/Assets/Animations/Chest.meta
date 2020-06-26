@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:New Unity Project/Assets/Animations/Chest.meta
 guid: e9475f4093b7d394296f73441eb6eae3
 folderAsset: yes
 DefaultImporter:
+=======
+guid: e37eb5e0beecc0c4683e1defb3bd2a8a
+NativeFormatImporter:
+>>>>>>> e94e7aa2cf1abdce4c2f79476335e215557fa7f7:New Unity Project/Assets/Animations/Player/down.anim.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
