@@ -39,9 +39,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Horizon
+    uniqueID: 1267020347
+    locked: 0
   - name: Background
     uniqueID: 1611635347
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enviroment
+    uniqueID: 3557085867
+    locked: 0
+  - name: Player
+    uniqueID: 1429552387
     locked: 0
