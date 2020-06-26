@@ -26,6 +26,14 @@ public class CharacterAnimation : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             anim.SetBool("isDown", true);
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+            {
+                anim.SetBool("isCrouching", true);
+            }
+            else
+            {
+                anim.SetBool("isCrouching", false);
+            }
         }
         else
         {
