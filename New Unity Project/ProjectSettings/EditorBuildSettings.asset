@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/2D Platformer Controller/Scenes/Demo.unity
+  - enabled: 0
+    path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: c7734d6aa01827c4b914e86d09f08f4a
+  - enabled: 1
+    path: Assets/Scenes/first realm.unity
+    guid: b4978b4331670cb45a5be661ff585acb
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 6ec05ea54027ece4caca9776e333f16d
   m_configObjects: {}
