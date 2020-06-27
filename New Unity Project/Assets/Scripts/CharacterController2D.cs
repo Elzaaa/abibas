@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
@@ -19,14 +20,33 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 velocity = Vector3.zero;
 	public bool isInRange;
+
+	[Header("Events")]
+	[Space]
+
+	public UnityEvent OnLandEvent;
+
+	[System.Serializable]
+	public class BoolEvent : UnityEvent<bool> { }
+
+	public BoolEvent OnCrouchEvent;
+	private bool m_wasCrouching = false;
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+		
+		if (OnLandEvent == null)
+			OnLandEvent = new UnityEvent();
+
+		if (OnCrouchEvent == null)
+			OnCrouchEvent = new BoolEvent();
 	}
 
 
 	private void FixedUpdate()
 	{
+		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
@@ -38,6 +58,8 @@ public class CharacterController2D : MonoBehaviour
 			{
 				m_Grounded = true;
 				m_DoubleJump=true;
+				if (!wasGrounded)
+					OnLandEvent.Invoke();
 			}
 
 			
@@ -87,6 +109,11 @@ public class CharacterController2D : MonoBehaviour
 			// If crouching
 			if (crouch)
 			{
+				if (!m_wasCrouching)
+				{
+					m_wasCrouching = true;
+					OnCrouchEvent.Invoke(true);
+				}
 				// Reduce the speed by the crouchSpeed multiplier
 				move *= m_CrouchSpeed;
 
@@ -98,6 +125,12 @@ public class CharacterController2D : MonoBehaviour
 				// Enable the collider when not crouching
 				if (m_CrouchDisableCollider != null)
 					m_CrouchDisableCollider.enabled = true;
+				
+				if (m_wasCrouching)
+				{
+					m_wasCrouching = false;
+					OnCrouchEvent.Invoke(false);
+				}
 			}
 
 			// Move the character by finding the target velocity
