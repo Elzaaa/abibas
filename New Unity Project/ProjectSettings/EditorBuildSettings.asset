@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/first realm.unity
     guid: b4978b4331670cb45a5be661ff585acb
+  - enabled: 1
+    path: Assets/Scenes/End Scene.unity
+    guid: 6ec05ea54027ece4caca9776e333f16d
   m_configObjects: {}
