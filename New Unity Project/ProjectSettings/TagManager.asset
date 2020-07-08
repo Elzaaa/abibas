@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Through
+  - TurnTrigger
+  - Turn
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - 
   - Player
   - Obstacle
-  - 
-  - 
+  - Ground
+  - Enemy
   - 
   - 
   - 
