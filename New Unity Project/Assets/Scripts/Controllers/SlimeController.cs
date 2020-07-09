@@ -42,7 +42,7 @@ public class SlimeController : MonoBehaviour
     {
         if (trig.gameObject.CompareTag("Turn"))
         {
-            Debug.Log("Trigger");
+             
             if (movingRight) movingRight = false;
             else movingRight = true;
         }
