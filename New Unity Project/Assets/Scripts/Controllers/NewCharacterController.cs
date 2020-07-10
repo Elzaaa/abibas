@@ -46,7 +46,6 @@ public class NewCharacterController : MonoBehaviour
                 
             }
 
-        animator.SetFloat("speed", rigidbody2d.velocity.x);
         Movement();
 
         
