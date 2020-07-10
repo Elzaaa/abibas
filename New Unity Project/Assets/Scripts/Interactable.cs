@@ -32,7 +32,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
-            Debug.Log("Player entered trigger zone");
+            
         }
     }
 
@@ -41,7 +41,7 @@ public class Interactable : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            Debug.Log("Player leaved trigger zone");
+            
         }
     }
 }

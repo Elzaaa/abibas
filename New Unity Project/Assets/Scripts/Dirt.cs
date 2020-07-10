@@ -6,7 +6,7 @@ public class Dirt : MonoBehaviour
 {
 
     public GameObject hiteffect;
-
+    public float damageToDeal;
     public void Update()
     {
         Physics2D.IgnoreLayerCollision(8, 9);
@@ -15,7 +15,13 @@ public class Dirt : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameObject effect = Instantiate(hiteffect, transform.position, Quaternion.identity);
+
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<TirtleBehavior>().TakeDamage(damageToDeal);
+        }
+
+        GameObject effect = Instantiate(hiteffect, collision.gameObject.transform.position, Quaternion.identity);
         Destroy(effect,1f);
         Destroy(gameObject);
     }

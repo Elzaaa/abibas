@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartMenu.unity
     guid: c7734d6aa01827c4b914e86d09f08f4a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/first realm.unity
     guid: b4978b4331670cb45a5be661ff585acb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/End Scene.unity
     guid: 6ec05ea54027ece4caca9776e333f16d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/fad.unity
     guid: dc0835cf480558a4491934b833dff141
+  - enabled: 0
+    path: Assets/Scenes/Second Realm.unity
+    guid: bb89f8db9e042884cbc77b8a4972873d
   m_configObjects: {}

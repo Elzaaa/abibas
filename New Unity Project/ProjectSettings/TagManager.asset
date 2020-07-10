@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Through
-  - TurnTrigger
   - Turn
   - Enemy
+  - Water
+  - Slime
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - Obstacle
   - Ground
   - Enemy
-  - 
+  - projectiles
   - 
   - 
   - 
@@ -56,4 +56,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1429552387
+    locked: 0
+  - name: Water
+    uniqueID: 654448923
     locked: 0

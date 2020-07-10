@@ -1,6 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NewCharacterController : MonoBehaviour
 {
@@ -8,6 +8,8 @@ public class NewCharacterController : MonoBehaviour
     [SerializeField] public float JumpVelocity;
     [SerializeField] public float moveSpeed;
     public Animator animator;
+    public Transform RespawnPoint;
+   
 
 
     [SerializeField] private LayerMask groundlayerMask;
@@ -106,4 +108,52 @@ public class NewCharacterController : MonoBehaviour
 
         transform.Rotate(0f, 180f, 0f);
     }
+
+    public void NextStage()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            moveSpeed /= 2;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            moveSpeed *= 2;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Slime") )
+        {
+            if (isGrounded())
+            {
+
+                Respawn();
+                
+            }
+            else
+            {
+                GameObject go = collision.gameObject;
+                go.GetComponentInChildren<Animator>().SetTrigger("Dead");
+                go.GetComponent<SlimeController>().death();
+                rigidbody2d.velocity = Vector2.up * JumpVelocity;
+
+            }
+        }
+    }
+    public void Respawn()
+    {
+        gameObject.transform.position = RespawnPoint.position;
+
+    }
+
+
 }

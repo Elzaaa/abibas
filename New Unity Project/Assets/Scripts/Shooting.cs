@@ -48,15 +48,17 @@ public class Shooting : MonoBehaviour
     
      private IEnumerator WaitForSeconds()
     {
+        controller.enabled = false;
         animator.Play("summon dirt");
         yield return new WaitForSeconds(0.6f);
         ShootingPos.GetComponent<SpriteRenderer>().enabled = true;
+        controller.enabled = true;
     }
     private void Reload()
     {
         //freeze player
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        controller.enabled = false;
+        
         // play animation and increase ammo 
         
         StartCoroutine(WaitForSeconds());
@@ -65,7 +67,7 @@ public class Shooting : MonoBehaviour
         ammo = true;
         //unfreeze player
  
-        controller.enabled = true;
+        
         
 
     }

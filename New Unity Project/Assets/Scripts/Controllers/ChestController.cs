@@ -14,8 +14,8 @@ public class ChestController : MonoBehaviour
     {
         if (!isOpen)
         {
-            Image im = cardImage.GetComponent<Image>();
-            im.sprite = sprite;
+            Image imj = cardImage.GetComponent<Image>();
+            imj.sprite = sprite;
       
             isOpen = true;
             Debug.Log("Chest  has Oppened");

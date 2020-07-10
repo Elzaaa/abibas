@@ -51,7 +51,7 @@ public class SlimeController : MonoBehaviour
      public void death()
     {
         this.enabled = false;
-        Destroy(gameObject,1);
+        Destroy(gameObject,1/2f);
        
     }
 }
