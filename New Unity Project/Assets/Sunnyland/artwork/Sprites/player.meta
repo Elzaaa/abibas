@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:New Unity Project/Assets/Sunnyland/artwork/Sprites/player.meta
 guid: 5c21447ec5eed544d87e07d1400500e9
+=======
+guid: a658d70d29d48e643b7f2540a180b8cf
+>>>>>>> 10234bcb803dbd8275acda0cffbb85b5ddb0ab2d:New Unity Project/Assets/Sunnyland/artwork/Sprites/player/doubleJump.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
