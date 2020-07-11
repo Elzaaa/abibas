@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Water
   - Slime
+  - End of Realm
+  - DeathZone
+  - Green Portal
+  - Purple Portal
+  - The END
   layers:
   - Default
   - TransparentFX

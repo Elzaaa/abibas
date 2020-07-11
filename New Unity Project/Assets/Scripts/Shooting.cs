@@ -74,7 +74,6 @@ public class Shooting : MonoBehaviour
     private void Shoot( )
     {
         
-        Debug.Log("Shoot");
         GameObject bullet = Instantiate(DirtPrefab, ShootingPos.transform.position, ShootingPos.transform.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(mouseDirection * BulletForce, ForceMode2D.Impulse);

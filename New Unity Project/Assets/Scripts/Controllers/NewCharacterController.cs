@@ -120,6 +120,41 @@ public class NewCharacterController : MonoBehaviour
         {
             moveSpeed /= 2;
         }
+
+        if (collision.gameObject.CompareTag("End of Realm"))
+        {
+            
+                BackToHub();
+            
+        }
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+
+            Respawn();
+
+        }
+        if (collision.gameObject.CompareTag("Green Portal"))
+        {
+
+            SceneManager.LoadScene(3);
+        }
+        if (collision.gameObject.CompareTag("Purple Portal"))
+        {
+
+            SceneManager.LoadScene(4);
+        }
+        if (collision.gameObject.CompareTag("The END"))
+        {
+
+            SceneManager.LoadScene(5);
+        }
+
+    }
+
+    public void BackToHub()
+    {
+        SceneManager.LoadScene(2);
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
